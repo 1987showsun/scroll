@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <style type="text/css">
+    *{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 0px;
+    }
+    body{
+      min-height : 100vh;
+    }
+
+      .end{
+        width: 100%;
+        color: #fff;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+  </style>
+  <link rel="stylesheet" type="text/css" href="sunScrollStyle.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script type="text/javascript" src="sunScroll.js"></script>
+  <script>
+    /*$sunScrollSetAPI = {
+      hoverBlock  : '.sunScrollInduction',
+      moveBlock   : '.sunMoveBlock',
+    }*/
+
+    $(function(){
+      var scrollAPI = new sunScroll.initial({
+        $block      : '.scrollblock',
+        $scrollBar  : {
+          _permanent  : true,
+          _sleepTime  : 2000,
+        },
+        _toBottom   : true,
+      });
+      var scrollAPI = new sunScroll.initial({
+        $block      : '#test2',
+        $scrollBar  : {
+          _permanent  : true,
+          _sleepTime  : 1000,
+        },
+        _toBottom   : true,
+      });
+      var scrollAPI = new sunScroll.initial({
+        $block      : '.scrollblock3',
+        $scrollBar  : {
+          _permanent  : true,
+          _sleepTime  : 1000,
+        },
+        _toBottom   : false,
+      });
+
+      var sum_h = $('#test .wrap .move .in').height();
+      $('.add').click(function(event) {
+        in_h  = $('#test .wrap .move .in').height();
+        sum_h = sum_h + 50;
+        $('#test .wrap .move .in').css({
+          height : sum_h,
+        });
+        var add="add"
+        sunScroll.reSize(add);
+      });
+    })
+  </script>
+</head>
+<body>
+  <!--<div class="sunScrollInduction">
+    <div class="sunMoveBlock">
+      <div class="end">end</div>
+    </div>
+  </div>
+  <div class="sunScrollInduction">
+    <div class="sunMoveBlock">
+      <div class="end">end</div>
+    </div>
+  </div>-->
+
+  <div class="scrollblock">
+    <div class="in">
+      dsasdas
+    </div>
+  </div>
+
+  <div class="scrollblock">
+    <div class="in" style="height: 3200px;">
+      dsasdas
+      <div class="end">END</div>
+    </div>
+  </div>
+
+  <div id="test" class="scrollblock ss dd" style="height:80vh;">
+    <div class="in" style="height: 500px;">
+      dsasdas
+      <div class="end">END3</div>
+    </div>
+  </div>
+
+  <div id="test2" class="scrollblock2" style="height:90vh;">
+    <div class="in" style="height: 2000px;">
+      start
+      <div class="end">END</div>
+    </div>
+  </div>
+
+  <div class="scrollblock3" style="height:70vh;">
+    <div class="in" style="height: 2300px;">
+      dsasdas
+      <div class="end">END3</div>
+    </div>
+  </div>
+
+  <button class="add">addma</button>
+</body>
+</html>
